@@ -1,0 +1,34 @@
+{
+  "employees": [
+    {
+      "firstname": "rahul",
+      "lastname": "kumarrr",
+      "email": "rahultripathi.57@yahoo.in",
+      "id": 2
+    },
+    {
+      "firstname": "sourav",
+      "lastname": "gupta",
+      "email": "sgupta@news.in",
+      "id": 3
+    },
+    {
+      "firstname": "ajay",
+      "lastname": "gupta",
+      "email": "ajaygupta@codingthesmartway.com",
+      "id": 4
+    },
+    {
+      "firstname": "vishal",
+      "lastname": "gupta",
+      "email": "vishalgupta@codingthesmartway.com",
+      "id": 5
+    },
+    {
+      "firstname": "shadil",
+      "lastname": "khan",
+      "email": "shadilkhan@codingthesmartway.com",
+      "id": 6
+    }
+  ]
+}
