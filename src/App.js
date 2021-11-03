@@ -11,10 +11,10 @@ export default function App() {
     fetch("http://localhost:8000/employees").then((result)=>{
       result.json().then((resp)=>{
         setUsers(resp);
-        setFirstName(resp[0].firstname);
-        setLastName(resp[0].lastname);
-        setEmail(resp[0].email);
-        setId(resp[0].id);
+        // setFirstName(resp[0].firstname);
+        // setLastName(resp[0].lastname);
+        // setEmail(resp[0].email);
+        // setId(resp[0].id);
       })
     })
   }
@@ -65,22 +65,41 @@ export default function App() {
         })
     }
                               //add a new user
-      function addUser(){
-        // let data={firstname,lastname,email}
-        // fetch(`http://localhost:8000/employees`,{
-        //   method:"P",
-        //   headers:{
-        //     "Accept":"application/json",
-        //     "Content-Type":"application/json",
-        //   },
-        //   body:JSON.stringify(data)
-        // }).then((result)=>{
-        //   result.json().then((resp)=>{
-        //     // console.log(resp);
-        //     getUser();
+      // function addUser(){
+      //   // let data={firstname,lastname,email}
+      //   // fetch(`http://localhost:8000/employees`,{
+      //   //   method:"P",
+      //   //   headers:{
+      //   //     "Accept":"application/json",
+      //   //     "Content-Type":"application/json",
+      //   //   },
+      //   //   body:JSON.stringify(data)
+      //   // }).then((result)=>{
+      //   //   result.json().then((resp)=>{
+      //   //     // console.log(resp);
+      //   //     getUser();
            
-        //   })
-        // })
+      //   //   })
+      //   // })
+      // }
+      function addUser(){
+        console.log(firstname,lastname,email);
+        let data={firstname,lastname,email}
+        fetch(`http://localhost:8000/employees`,{
+          method:"POST",
+          headers:{
+            "Accept":"application/json",
+            "Content-Type":"application/json",
+          },
+          body:JSON.stringify(data)
+        }).then((result)=>{
+          result.json().then((resp)=>{
+            console.log(resp);
+            getUser();
+           
+          })
+        })
+
       }
   return (
     <div className="container">
@@ -117,7 +136,7 @@ export default function App() {
     <input type="text" value={lastname} onChange={(e)=>setLastName(e.target.value)} name="lastname" /><br/><br/>
     <input type="text" value={email} onChange={(e)=>setEmail(e.target.value)} name="email" /><br/><br/>
     <button className="btn btn-sm btn-success" onClick={()=>updateUser()}>UpdateUser</button>
-    <button className="btn btn-sm btn-info mx-3" onClick={()=>addUser()}>AddUser</button>
+    <button className="btn btn-sm btn-info mx-3" onClick={()=>addUser()}>AddNewUser</button>
 
   </div>
     </div>
